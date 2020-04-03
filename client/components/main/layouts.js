@@ -91,6 +91,17 @@ Template.userFormsLayout.helpers({
   },
 });
 
+Template.userFormsLayout.onRendered(() => {
+  // We add a timeout to ensure that rendering has fully completed.
+  window.setTimeout(() => {
+    const oidcButton = document.getElementById('at-oidc');
+
+    if (oidcButton) {
+      oidcButton.click();
+    }
+  }, 1500);
+});
+
 Template.userFormsLayout.events({
   'change .js-userform-set-language'(event) {
     const i18nTag = $(event.currentTarget).val();
@@ -141,6 +152,13 @@ async function authentication(event, templateInstance) {
     case 'cas':
       return new Promise(resolve => {
         Meteor.loginWithCas(match, password, function() {
+          resolve(FlowRouter.go('/'));
+        });
+      });
+
+    case 'rt':
+      return new Promise(resolve => {
+        Meteor.loginWithRt(match, password, function() {
           resolve(FlowRouter.go('/'));
         });
       });

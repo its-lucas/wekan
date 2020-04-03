@@ -193,6 +193,7 @@ wekan-accounts-oidc@1.0.10
 wekan-ldap@0.0.2
 wekan-markdown@1.0.7
 wekan-oidc@1.0.12
+wekan-rt@0.0.2
 wekan-scrollbar@3.1.3
 yasaricli:slugify@0.0.7
 zimme:active-route@2.3.2

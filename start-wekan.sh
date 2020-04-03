@@ -39,7 +39,7 @@
       #---------------------------------------------------------------
       # ==== RICH TEXT EDITOR IN CARD COMMENTS ====
       # https://github.com/wekan/wekan/pull/2560
-      export RICHER_CARD_COMMENT_EDITOR=false
+      export RICHER_CARD_COMMENT_EDITOR=true
       #---------------------------------------------------------------
       # ==== MOUSE SCROLL ====
       # https://github.com/wekan/wekan/issues/2949
@@ -89,11 +89,11 @@
       #export EMAIL_NOTIFICATION_TIMEOUT=30000
       #-----------------------------------------------------------------
       # CORS: Set Access-Control-Allow-Origin header. Example: *
-      #export CORS=*
+      export CORS=*
       # To enable the Set Access-Control-Allow-Headers header. "Authorization,Content-Type" is required for cross-origin use of the API.
-      #export CORS_ALLOW_HEADERS=Authorization,Content-Type
+      export CORS_ALLOW_HEADERS=Authorization,Content-Type
       # To enable the Set Access-Control-Expose-Headers header.  This is not needed for typical CORS situations. Example: *
-      #export CORS_EXPOSE_HEADERS=*
+      export CORS_EXPOSE_HEADERS=*
       #---------------------------------------------
       ## Optional: Integration with Matomo https://matomo.org that is installed to your server
       ## The address of the server where Matomo is hosted:
@@ -126,26 +126,26 @@
       #    the application ID as well as generate a secret key.
       # 2) Configure the environment variables. This differs slightly
       #     by installation type, but make sure you have the following:
-      #export OAUTH2_ENABLED=true
+      export OAUTH2_ENABLED=true
       # OAuth2 docs: https://github.com/wekan/wekan/wiki/OAuth2
       # OAuth2 login style: popup or redirect.
-      #export OAUTH2_LOGIN_STYLE=redirect
+      export OAUTH2_LOGIN_STYLE=redirect
       # Application GUID captured during app registration:
-      #export OAUTH2_CLIENT_ID=xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx
+      export OAUTH2_CLIENT_ID=V0TtX2W30c6QrZnSPvUUKUrU1EWRisS9
       # Secret key generated during app registration:
-      #export OAUTH2_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-      #export OAUTH2_SERVER_URL=https://login.microsoftonline.com/
-      #export OAUTH2_AUTH_ENDPOINT=/oauth2/v2.0/authorize
-      #export OAUTH2_USERINFO_ENDPOINT=https://graph.microsoft.com/oidc/userinfo
-      #export OAUTH2_TOKEN_ENDPOINT=/oauth2/v2.0/token
+      export OAUTH2_SECRET=6EHUe50Pg96pma1g7QMwZvjNT_p-soAo3oxLXHG7DQ1HAaHTYP9BsFHD8iBfgqz7
+      export OAUTH2_SERVER_URL=https://wekan-dev.au.auth0.com
+      export OAUTH2_AUTH_ENDPOINT=/authorize
+      export OAUTH2_USERINFO_ENDPOINT=/userinfo
+      export OAUTH2_TOKEN_ENDPOINT=/oauth/token
       # The claim name you want to map to the unique ID field:
-      #export OAUTH2_ID_MAP=email
+      export OAUTH2_ID_MAP=https://localhost:3000/id
       # The claim name you want to map to the username field:
-      #export OAUTH2_USERNAME_MAP=email
+      export OAUTH2_USERNAME_MAP=https://localhost:3000/email
       # The claim name you want to map to the full name field:
-      #export OAUTH2_FULLNAME_MAP=name
+      export OAUTH2_FULLNAME_MAP=https://localhost:3000/name
       # The claim name you want to map to the email field:
-      #export OAUTH2_EMAIL_MAP=email
+      export OAUTH2_EMAIL_MAP=https://localhost:3000/email
       #-----------------------------------------------------------------
       # ==== OAUTH2 KEYCLOAK ====
       # https://github.com/wekan/wekan/wiki/Keycloak  <== MAPPING INFO, REQUIRED

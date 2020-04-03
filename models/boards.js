@@ -1,3 +1,5 @@
+import CustomFields from './customFields';
+
 Boards = new Mongo.Collection('boards');
 
 /**
@@ -1301,6 +1303,16 @@ if (Meteor.isServer) {
       activityTypeId: doc._id,
       activityType: 'createBoard',
       boardId: doc._id,
+    });
+
+    CustomFields.insert({
+      boardIds: [doc._id],
+      name: 'RT',
+      type: 'text',
+      showOnCard: true,
+      automaticallyOnCard: true,
+      showLabelOnMiniCard: true,
+      settings: {},
     });
   });
 
